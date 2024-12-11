@@ -135,7 +135,14 @@ def app():
 
         # Визуализация
         st.subheader("Графики метрик")
-        st.line_chart(results_df[["avg_latency", "failed_requests"]])
+
+        # График средней задержки
+        st.write("Средняя задержка (avg_latency)")
+        st.scatter_chart(results_df["avg_latency"])
+
+        # График неудачных запросов
+        st.write("Неудачные запросы (failed_requests)")
+        st.scatter_chart(results_df["failed_requests"])
 
 
 # Запуск приложения Streamlit
